@@ -1,0 +1,250 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <title>TodoHogar</title>
+    <link rel="stylesheet" href="css/bootstrap.css">
+    <script src="js/jquery-1.11.0.min.js"></script>
+    <style>
+    @import url(http://fonts.googleapis.com/css?family=Bree+Serif);
+    body, h1, h2, h3, h4, h5, h6{
+      font-family: 'Bree Serif', serif;
+    }
+    </style>
+  </head>
+  <body>
+    <div class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+        <div class="container">
+          <div class="navbar-header">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+              <span class="sr-only">Menú de Navegación</span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="#">Todo Hogar</a>
+          </div>
+          <div class="collapse navbar-collapse">
+            <ul class="nav navbar-nav">
+              <li class="active"><a href="#">Inicio</a></li>
+              <li><a href="#configuracion">Configuracion</a></li>
+              <li><a href="#usuarios">Usuarios</a></li>
+            </ul>
+            <div class="collapse navbar-collapse pull-right ">
+              <ul class="nav navbar-nav">
+                <li><a>Esmilce del Valle</a></li>
+                <li><a href="#salir">Salir</a></li>
+              </ul>
+            </div>
+          </div><!--/.nav-collapse -->
+        </div>
+    </div>
+    <br/><br/>
+
+    <div class="container">
+      <div class="row">
+        <div class="col-xs-6">
+          <h1>
+            <a href="https://twitter.com/tahirtaous">
+              <img src="logo.png">
+              Hogar
+            </a>
+          </h1>
+        </div>
+        <div class="col-xs-6 text-right">
+          <h1>Factura <small>#001</small></h1>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="col-xs-5">
+          <div class="panel panel-default">
+            <div class="panel-heading">
+              <h4>Vendedor: <a href="#">Emilce del Valle</a></h4>
+            </div>
+            <div class="panel-body">
+                <p>Direccion: Antequera 1615</p>
+                <p>Fecha: 25 de Junio de 2014</p>
+                <p>RUC Nº: 235467</p>
+                Tipo de Pago:
+                  <label class="checkbox-inline">
+                    <input type="radio" name="optionsRadios" class="cuotas"> Contado
+                  </label>
+                  <label class="checkbox-inline">
+                    <input type="radio" name="optionsRadios" id="financiado" class="cuotas"> Financiado
+                  </label>
+                  <div class="col-xs-3 checkbox-inline" id="cuotas">
+                    <label> Cuotas </label>
+                    <select class="form-control">
+                      <option>3</option>
+                      <option>6</option>
+                      <option>9</option>
+                      <option>12</option>
+                    </select>
+                  </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-xs-5 col-xs-offset-2 text-right">
+          <div class="form-group">
+            <div class="panel panel-default">
+              <div class="panel-heading">
+
+                <label class="sr-only" for="nombre"><h4>Ingresar Nombre de Cliente</h4></label>
+                <input class="form-control" id="nombre" placeholder="Ingresar Nombre de Cliente" type="email">
+
+
+
+              </div>
+              <div class="panel-body">
+                <p>
+                  <div class="row pull-right">
+                    <label class="col-xs-4" for="direccion">Dirección</label>
+                    <div class="col-xs-6">
+                      <input class="form-control input-sm " id="direccion" placeholder="Ingresar Dirección" type="text">
+                    </div>
+                  </div>
+                  <div class="row pull-right">
+                    <label class="col-xs-4" for="telefono">Teléfono</label>
+                    <div class="col-xs-6">
+                      <input class="form-control input-sm" id="telefono" placeholder="Ingresar Teléfono" type="text">
+                    </div>
+                  </div>
+                  <div class="row pull-right">
+                    <label class="col-xs-4" for="ruc">RUC</label>
+                    <div class="col-xs-6">
+                      <input class="form-control input-sm " id="ruc" placeholder="Ingresar RUC   " type="text">
+                    </div>
+                  </div>
+                </p>
+
+              </div>
+            </div>
+          </div>
+        </div>
+      </div> <!-- / end client details section -->
+
+      <div class="form-group">
+        <table class="table table-bordered table-hover">
+          <thead>
+            <tr>
+              <th><h4>Descripcion</h4></th>
+              <th><h4>Cantidad</h4></th>
+              <th><h4>Precio</h4></th>
+              <th><h4>SubTotal</h4></th>
+              <th></th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td class="col-xs-3">
+                <input class="form-control input-sm " id="ruc" placeholder="" type="text" value="Heladera">
+              </td>
+              <td class="col-xs-3">
+                <input class="form-control input-sm " id="ruc" placeholder="" type="text" value="1">
+              </td>
+              <td class="text-right">₲20000.00</td>
+              <td class="text-right">₲20000.00</td>
+              <td><a href="#eliminar">X</a></td>
+            </tr>
+            <tr>
+              <td class="col-xs-3">
+                <input class="form-control input-sm " id="ruc" placeholder="" type="text" value="Cocina">
+              </td>
+              <td class="col-xs-3">
+                <input class="form-control input-sm " id="cafetera-cantidad" placeholder="" type="text" value="10">
+              </td>
+              <td class="text-right">₲7500.00</td>
+              <td class="text-right">₲75000.00</td>
+              <td><a href="#eliminar">X</a></td>
+            </tr>
+            <tr>
+              <td class="col-xs-3">
+                <input class="form-control input-sm " id="ruc" placeholder="" type="text" value="Cafetera">
+              </td>
+              <td class="col-xs-3">
+                <input class="form-control input-sm " id="ruc" placeholder="" type="text" value="5">
+              </td>
+              <td class="text-right">₲5000.00</td>
+              <td class="text-right">₲25000.00</td>
+              <td><a href="#eliminar">X</a></td>
+            </tr>
+
+            <tr id="form-agregar-producto">
+              <td class="col-xs-3">
+                <input class="form-control input-sm " id="codigo-producto" placeholder="Buscar por código o descripción" type="text" value="">
+              </td>
+              <td class="col-xs-3">
+                <input class="form-control input-sm " id="cantidad-producto" placeholder="Ingresar Cantidad" type="text" value="">
+              </td>
+              <td class="text-right">₲</td>
+              <td class="text-right">₲</td>
+              <td>
+                <a href="#agregar" id="agregar-producto">+</a></td>
+              </tr>
+
+            </tbody>
+          </table>
+        </div>
+        <div class="row text-right">
+         <div class="col-xs-2 col-xs-offset-8">
+          <p>
+            <strong>
+              Sub Total : <br>
+              Interés:    <br>
+              Descuento:  <br>
+              Total :     <br>
+            </strong>
+          </p>
+        </div>
+        <div class="col-xs-2">
+          <strong>
+            ₲120000.00 <br>
+            <span id="interes">N/A</span><br>
+            N/A <br>
+            ₲120000.00 <br>
+          </strong>
+        </div>
+      </div>
+
+      <button type="button" class="btn btn-danger">Cancelar</button>
+      <button type="button" class="btn btn-primary">Aceptar</button>
+
+    </div>
+
+    <script type="text/javascript">
+      $(document).ready(function(){
+        showCuotas();
+
+        $(".cuotas").on('click', function(){
+          showCuotas();
+        });
+
+        $("#agregar-producto").on('click', function(){
+          var producto = $("#codigo-producto").val();
+          var cantidad = $("#cantidad-producto").val();
+          var precio = 10000;
+          var subtotal = precio * cantidad
+          var html = '<tr><td class="col-xs-3"><input class="form-control input-sm " id="ruc" placeholder="" type="text" value="' + producto + '"></td><td class="col-xs-3"><input class="form-control input-sm " id="ruc" placeholder="" type="text" value="' + cantidad + '"></td><td class="text-right">₲' + precio + '</td><td class="text-right">₲' + subtotal + '</td><td><a href="#eliminar">X</a></td></tr>';
+          $(html).insertBefore("#form-agregar-producto");
+          $("#codigo-producto").val('');
+          $("#cantidad-producto").val('');
+        })
+      });
+
+      function showCuotas(){
+        if($('#financiado').is(':checked')){
+          $("#cuotas").show();
+          $("#interes").html("₲18000");
+        }else{
+          $("#cuotas").hide();
+          $("#interes").html("N/A");
+        }
+      }
+    </script>
+
+
+  </body>
+</html>
+
